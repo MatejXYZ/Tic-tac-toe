@@ -1,9 +1,6 @@
-const board = document.getElementById('board')
-
-for (let i = 0; i < 9; i++) {
-    board.children[i].classList.add('square')
-}
-
+const board = document.querySelector('.board');
+const start = document.getElementById('startContainer');
+const message = document.getElementById('message');
 const gameboard = (function () {
     const current = {player: null};
     let table = [];
@@ -26,9 +23,12 @@ const gameboard = (function () {
                 table[position] = symbol;
                 render();
                 let result = check();
-                if (result === 'finish') return console.log(current['player'].name + ' wins!');
-                else if (result === 'draw') return console.log('I\'s a draw.');
-                current['player'] = current['player'] === player1 ? player2 : player1;
+                if (result) {
+                    board.classList.toggle('hidden');
+                    message.classList.toggle('hidden');
+                    message.textContent = result === 'finish' ? (current.player.name || current.player.symbol) + ' wins!' : 'It\'s a draw.'
+                }
+                current['player'] = current['player'] === players['first'] ? players['second'] : players['first'];
             }
         };
         current['player'] = obj;
@@ -52,10 +52,11 @@ const gameboard = (function () {
         render,
     }
 })();
-
-
-
-//
-
-const player1 = gameboard.playerMaker('Player 1', 'X');
-const player2 = gameboard.playerMaker('Player 2', 'O');
+let players = {};
+start.querySelector('button').addEventListener('click', () => {
+    const hideReveal = element => element.classList.toggle('hidden');
+    hideReveal(start);
+    hideReveal(board);
+    players['first'] = gameboard.playerMaker(start.querySelectorAll('input')[0].value, 'X');
+    players['second'] = gameboard.playerMaker(start.querySelectorAll('input')[1].value, 'O')
+})

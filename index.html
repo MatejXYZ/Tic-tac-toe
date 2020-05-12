@@ -5,17 +5,29 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <div id='board'>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div id='startContainer'>
+            <label>
+                <input type='text' value='Player 1'>
+                <span>: X</span>
+            </label>
+            <label>
+                <input type='text' value='Player 2'>
+                <span>: O</span>
+            </label>
+            <button id='start'>Start</button>
         </div>
+        <div class='board hidden'>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+        </div>
+        <div id='message' class='hidden'></div>
         <script src='script.js'></script>
     </body>
 </html>
