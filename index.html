@@ -5,16 +5,19 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <div id='startContainer'>
+        <div class='startContainer'>
             <label>
-                <input type='text' value='Player 1'>
+                <input type='text' placeholder='Player 1'>
                 <span>: X</span>
             </label>
-            <label>
-                <input type='text' value='Player 2'>
+            <label class='choice'>
+                <input type='text' placeholder='Player 2'>
                 <span>: O</span>
             </label>
-            <button id='start'>Start</button>
+            <span>or</span>
+            <div class='choice'>
+                <div class='ai'>vs AI</div>
+            </div>
         </div>
         <div class='board hidden'>
             <div class='square'></div>
@@ -27,7 +30,8 @@
             <div class='square'></div>
             <div class='square'></div>
         </div>
-        <div id='message' class='hidden'></div>
+        <div class='finish hidden'></div>
+        <button class='startButton'>Start</button>
         <script src='script.js'></script>
     </body>
 </html>
