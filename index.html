@@ -5,16 +5,35 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <div id='container'>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
+        <div class='start'>
+            <input type='text' maxlength="15" value='Player1'>
+            <button>OK</button>
+        </div>
+        <span class='versus hidden'>
+            <div>
+                <input type='text' maxlength="=15" value='Player2'>
+                <button>OK</button>
+            </div>
+            <span>or</span>
+            <button>vs AI</button>
+        </span>
+        <div class='gameplay hidden'>
+            <div id='container'>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+                <div class='square'></div>
+            </div>
+            <button>Restart</button>
+        </div>
+        <div class='fine hidden'>
+            <p></p>
+            <button>Play again</button>
         </div>
         <script src='script.js'></script>
     </body>
